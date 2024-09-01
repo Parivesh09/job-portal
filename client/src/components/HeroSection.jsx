@@ -10,6 +10,8 @@ import { Search } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { setSearchQuery } from "@/redux/jobSlice";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
 
 const HeroSection = () => {
   const dispatch = useDispatch();
@@ -24,6 +26,10 @@ const HeroSection = () => {
   ];
 
   function handleSearch() {
+    if (!searchQuery || searchQuery.trim() === "" || searchQuery === " ") {
+      toast.error("Please enter search query");
+      return;
+    }
     dispatch(setSearchQuery(searchQuery));
     navigate("/browse");
   }
@@ -87,10 +93,10 @@ const HeroSection = () => {
                 placeholder="Search your dream job here..."
                 value={searchQuery}
                 onChange={(e) => setQuery(e.target.value)}
-                required
+              // required
               />
               <button
-                type="submit"
+                type="button"
                 className="text-white absolute end-2.5 bottom-2.5 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-500 dark:hover:bg-red-700 dark:focus:ring-red-800 transition duration-150"
                 onClick={handleSearch}
               >
