@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { setUser } from "@/redux/authSlice";
+import LOGO from "../../assests/logo.png";
 
 const NavBar = () => {
   const { user } = useSelector((store) => store.auth);
@@ -41,9 +42,10 @@ const NavBar = () => {
 
   return (
     <div className="flex justify-between pt-3 items-center">
-      <Link className="text-2xl tracking-wide" to={"/"}>
+      <Link className="flex justify-center items-center text-2xl tracking-wide" to={"/"}>
         Job
-        <span className=" font-bold text-red-700">Hunt</span>
+        <span className="font-bold text-red-700">Hunt</span>
+        <img className="w-6 h-6" src={LOGO} alt="" />
       </Link>
 
       <div className="flex gap-12 items-center">
