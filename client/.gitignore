@@ -1,0 +1,52 @@
+# Node.js specific files
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+.cache/
+.npm/
+.next/
+
+# Typescript specific
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+*.test.js
+*.spec.js
+
+# Miscellaneous
+!.gitkeep
