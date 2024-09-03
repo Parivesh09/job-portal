@@ -29,7 +29,6 @@ https://github.com/user-attachments/assets/c44792a0-a13c-42ee-8473-bc48a0b84002
     - [**Running the Frontend**](#running-the-frontend)
     - [**Accessing the Application**](#accessing-the-application)
   - [**Contributing**](#contributing)
-  - [**License**](#license)
   - [**Acknowledgments**](#acknowledgments)
   - [**Contact Information**](#contact-information)
 
