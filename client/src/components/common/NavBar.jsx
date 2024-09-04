@@ -22,7 +22,7 @@ const NavBar = () => {
   const logout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/user/logout",
+        `${process.env.BACKEND_BASE_URL}/user/logout`,
         {},
         {
           withCredentials: true,

@@ -8,7 +8,7 @@ const useGetJobById = (jobId) => {
     const fetchJob = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/jobs/get/${jobId}`,
+          `${process.env.BACKEND_BASE_URL}/jobs/get/${jobId}`,
           { withCredentials: true }
         );
 

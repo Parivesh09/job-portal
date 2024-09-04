@@ -183,6 +183,8 @@ npm run dev
 ### **Accessing the Application**
 
 - Backend: `http://localhost:3000`.
+- Live Backend: `https://job-portal-nu-hazel.vercel.app/`.
+
 
 ---
 

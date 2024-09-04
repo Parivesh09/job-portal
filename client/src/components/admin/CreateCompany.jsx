@@ -43,7 +43,7 @@ const CreateCompany = () => {
       formData.append("file", input.file);
 
       const response = await axios.post(
-        "http://localhost:3000/company/registerCompany",
+        `${process.env.BACKEND_BASE_URL}/company/registerCompany`,
         formData,
         {
           withCredentials: true,

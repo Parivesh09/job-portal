@@ -46,7 +46,7 @@ const Signup = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:3000/user/register",
+        `${process.env.BACKEND_BASE_URL}/user/register`,
         formData,
         {
           headers: {

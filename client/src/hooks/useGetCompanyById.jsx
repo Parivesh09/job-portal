@@ -6,7 +6,7 @@ const useGetCompanyById = (id) => {
   useEffect(() => {
     const fetchJob = async () => {
       const response = await axios.get(
-        `http://localhost:3000/company/get/${id}`,
+        `${process.env.BACKEND_BASE_URL}/company/get/${id}`,
         {
           withCredentials: true,
         }

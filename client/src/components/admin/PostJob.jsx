@@ -54,7 +54,7 @@ const PostJob = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3000/jobs/postJob",
+        `${process.env.BACKEND_BASE_URL}/jobs/postJob`,
         input,
         {
           withCredentials: true,

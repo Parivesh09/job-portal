@@ -8,7 +8,7 @@ const useGetAllJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/jobs/getJobs", {
+        const response = await axios.get(`${process.env.BACKEND_BASE_URL}/jobs/getJobs`, {
           withCredentials: true,
         });
 

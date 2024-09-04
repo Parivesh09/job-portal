@@ -27,7 +27,7 @@ const AdminJobDetails = () => {
   const updateApplicationStatus = async (status, applicationId) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/jobs/applications/updateStatus/${applicationId}`,
+        `${process.env.BACKEND_BASE_URL}/jobs/applications/updateStatus/${applicationId}`,
         { status },
         {
           withCredentials: true,

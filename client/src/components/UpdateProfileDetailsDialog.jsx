@@ -52,7 +52,7 @@ const UpdateProfileDetailsDialog = ({ open, setOpen }) => {
       }
 
       const response = await axios.put(
-        "http://localhost:3000/user/profile/update",
+        `${process.env.BACKEND_BASE_URL}/user/profile/update`,
         formData,
         {
           headers: {

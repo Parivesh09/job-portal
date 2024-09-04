@@ -12,7 +12,7 @@ const Browse = () => {
     const fetchJobs = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/jobs/getJobs?keyword=${jobSearchKeyword}`
+          `${process.env.BACKEND_BASE_URL}/jobs/getJobs?keyword=${jobSearchKeyword}`
         );
 
         if (response?.data.success) {

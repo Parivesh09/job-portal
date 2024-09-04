@@ -29,7 +29,7 @@ const PostedJobs = ({ filter }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       const response = await axios.get(
-        "http://localhost:3000/jobs/getRecruiterJobs",
+        `${process.env.BACKEND_BASE_URL}/jobs/getRecruiterJobs`,
         {
           withCredentials: true,
         }

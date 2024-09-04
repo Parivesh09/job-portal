@@ -41,7 +41,7 @@ const EditJobDetails = () => {
       setLoading(true);
 
       const response = await axios.put(
-        `http://localhost:3000/jobs/update/${id}`,
+        `${process.env.BACKEND_BASE_URL}/jobs/update/${id}`,
         input,
         {
           withCredentials: true,

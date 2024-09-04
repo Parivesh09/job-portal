@@ -33,7 +33,7 @@ const JobDetails = () => {
   const applyJob = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/jobs/applications/apply/${id}`,
+        `${process.env.BACKEND_BASE_URL}/jobs/applications/apply/${id}`,
         {},
         { withCredentials: true }
       );

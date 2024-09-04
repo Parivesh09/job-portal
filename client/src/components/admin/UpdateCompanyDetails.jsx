@@ -60,7 +60,7 @@ const UpdateCompanyDetails = () => {
       if (input.website) formData.append("website", input.website);
 
       const response = await axios.put(
-        `http://localhost:3000/company/update/${id}`,
+        `${process.env.BACKEND_BASE_URL}/company/update/${id}`,
         formData,
         {
           withCredentials: true,
