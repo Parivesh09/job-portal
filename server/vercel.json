@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "controllers/*.js": {
+        "controllers/jobController.js": {
             "maxDuration": 60
         }
     },
