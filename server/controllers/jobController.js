@@ -76,7 +76,13 @@ async function postJob(req, res) {
 // will fetch all the jobs based on the keyword passed as query param
 async function getJobsBasedOnKeyword(req, res) {
   try {
-    const keyword = req.query.keyword || "";
+    const keyword = req?.query?.keyword || "";
+    if (!keyword) {
+      return res.status(200).json({
+        message: "Keyword is empty",
+        success: false,
+      });
+    }
     const jobs = await Job.find({
       $or: [
         { title: { $regex: keyword, $options: "i" } },
@@ -88,7 +94,7 @@ async function getJobsBasedOnKeyword(req, res) {
       .populate("applicants");
 
     if (!jobs || jobs.length === 0) {
-      return res.status(404).json({
+      return res.status(200).json({
         message: "No jobs found with corresponding keyword",
         success: false,
       });
@@ -116,7 +122,7 @@ async function getJobById(req, res) {
       .populate("applicants", "applicant -_id"); // excluding _id because mongoose will by default add it
 
     if (!job) {
-      return res.status(404).json({
+      return res.status(200).json({
         message: "No job found with corresponding id",
         success: false,
       });

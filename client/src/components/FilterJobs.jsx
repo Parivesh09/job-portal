@@ -30,6 +30,7 @@ const FilterJobs = () => {
   const dispatch = useDispatch();
 
   const handleFilterChange = (value) => {
+    if (!value || value.trim() === "") return;
     dispatch(setSearchQuery(value));
   }
 

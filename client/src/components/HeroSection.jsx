@@ -17,6 +17,7 @@ const HeroSection = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [searchQuery, setQuery] = useState("");
+  const [numberOfClicks, setNumberOfClicks] = useState(0);
   const categories = [
     "Frontend Developer",
     "Backend Developer",
@@ -26,12 +27,22 @@ const HeroSection = () => {
   ];
 
   function handleSearch() {
-    if (!searchQuery || searchQuery.trim() === "" || searchQuery === " ") {
-      toast.error("Please enter search query");
+    setNumberOfClicks(numberOfClicks + 1);
+    if (numberOfClicks === 4) {
+      toast.error("Please wait for 5 seconds");
+      setTimeout(() => {
+        setNumberOfClicks(0);
+      }, 5000);
       return;
     }
-    dispatch(setSearchQuery(searchQuery));
-    navigate("/browse");
+    if ((!searchQuery || searchQuery.trim() === "" || searchQuery === " ") && numberOfClicks < 4) {
+      toast.error("Please enter search query");
+      return;
+    } 
+    if( searchQuery && searchQuery.trim() !== "" && searchQuery !== " ") {
+      dispatch(setSearchQuery(searchQuery));
+      navigate("/browse");
+    }
   }
 
   function handleCategorySearch(e) {
@@ -58,9 +69,9 @@ const HeroSection = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </a>
