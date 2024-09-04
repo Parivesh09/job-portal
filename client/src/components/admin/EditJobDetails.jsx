@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Base_url from "@/Base_url";
 
 const EditJobDetails = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const EditJobDetails = () => {
       setLoading(true);
 
       const response = await axios.put(
-        `${process.env.BACKEND_BASE_URL}/jobs/update/${id}`,
+        `${Base_url}/jobs/update/${id}`,
         input,
         {
           withCredentials: true,

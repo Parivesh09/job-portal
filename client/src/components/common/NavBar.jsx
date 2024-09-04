@@ -13,6 +13,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { setUser } from "@/redux/authSlice";
 import LOGO from "../../assests/logo.png";
+import Base_url from "@/Base_url";
 
 const NavBar = () => {
   const { user } = useSelector((store) => store.auth);
@@ -22,7 +23,7 @@ const NavBar = () => {
   const logout = async () => {
     try {
       const response = await axios.post(
-        `${process.env.BACKEND_BASE_URL}/user/logout`,
+        `${Base_urll}/user/logout`,
         {},
         {
           withCredentials: true,

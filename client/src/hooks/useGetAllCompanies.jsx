@@ -1,3 +1,4 @@
+import Base_url from "@/Base_url";
 import { setCompaniesBulk } from "@/redux/companySlice";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -8,7 +9,7 @@ const useGetAllCompanies = () => {
 
   useEffect(() => {
     const fetchAllJobs = async () => {
-      const response = await axios.get(`${process.env.BACKEND_BASE_URL}/company/getAll`, {
+      const response = await axios.get(`${Base_url}/company/getAll`, {
         withCredentials: true,
       });
 

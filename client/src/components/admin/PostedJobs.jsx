@@ -19,6 +19,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setSingleJobDetail } from "@/redux/jobSlice";
+import Base_url from "@/Base_url";
 
 const PostedJobs = ({ filter }) => {
   const [recruiterJobs, setRecruiterJobs] = useState([]);
@@ -29,7 +30,7 @@ const PostedJobs = ({ filter }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       const response = await axios.get(
-        `${process.env.BACKEND_BASE_URL}/jobs/getRecruiterJobs`,
+        `${Base_url}/jobs/getRecruiterJobs`,
         {
           withCredentials: true,
         }

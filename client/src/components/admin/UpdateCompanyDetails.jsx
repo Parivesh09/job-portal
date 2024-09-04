@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Loader2Icon } from "lucide-react";
+import Base_url from "@/Base_url";
 
 const UpdateCompanyDetails = () => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const UpdateCompanyDetails = () => {
       if (input.website) formData.append("website", input.website);
 
       const response = await axios.put(
-        `${process.env.BACKEND_BASE_URL}/company/update/${id}`,
+        `${Base_url}/company/update/${id}`,
         formData,
         {
           withCredentials: true,

@@ -6,6 +6,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
+import Base_url from "@/Base_url";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const Signup = () => {
       }
 
       const response = await axios.post(
-        `${process.env.BACKEND_BASE_URL}/user/register`,
+        `${Base_url}/user/register`,
         formData,
         {
           headers: {

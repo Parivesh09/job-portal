@@ -7,6 +7,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Loader2Icon } from "lucide-react";
+import Base_url from "@/Base_url";
 
 const CreateCompany = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const CreateCompany = () => {
       formData.append("file", input.file);
 
       const response = await axios.post(
-        `${process.env.BACKEND_BASE_URL}/company/registerCompany`,
+        `${Base_url}/company/registerCompany`,
         formData,
         {
           withCredentials: true,

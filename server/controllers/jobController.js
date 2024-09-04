@@ -96,7 +96,7 @@ async function getJobsBasedOnKeyword(req, res) {
     if (!jobs || jobs.length === 0) {
       return res.status(200).json({
         message: "No jobs found with corresponding keyword",
-        success: false,
+        success: true,
       });
     }
 

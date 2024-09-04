@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/popover";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Base_url from "@/Base_url";
 
 const AdminJobDetails = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const AdminJobDetails = () => {
   const updateApplicationStatus = async (status, applicationId) => {
     try {
       const response = await axios.put(
-        `${process.env.BACKEND_BASE_URL}/jobs/applications/updateStatus/${applicationId}`,
+        `${Base_urll}/jobs/applications/updateStatus/${applicationId}`,
         { status },
         {
           withCredentials: true,

@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Base_url from "@/Base_url";
 
 const PostJob = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const PostJob = () => {
       setLoading(true);
 
       const response = await axios.post(
-        `${process.env.BACKEND_BASE_URL}/jobs/postJob`,
+        `${Base_url}/jobs/postJob`,
         input,
         {
           withCredentials: true,

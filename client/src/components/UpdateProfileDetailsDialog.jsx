@@ -11,6 +11,7 @@ import { setLoading, setUser } from "@/redux/authSlice";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
+import Base_url from "@/Base_url";
 
 const UpdateProfileDetailsDialog = ({ open, setOpen }) => {
   const { loading, user } = useSelector((store) => store.auth);
@@ -52,7 +53,7 @@ const UpdateProfileDetailsDialog = ({ open, setOpen }) => {
       }
 
       const response = await axios.put(
-        `${process.env.BACKEND_BASE_URL}/user/profile/update`,
+        `${Base_url}/user/profile/update`,
         formData,
         {
           headers: {

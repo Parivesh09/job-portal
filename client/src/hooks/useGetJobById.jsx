@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Base_url from "@/Base_url";
 
 const useGetJobById = (jobId) => {
   const [job, setJob] = useState(null);
@@ -8,7 +9,7 @@ const useGetJobById = (jobId) => {
     const fetchJob = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_BASE_URL}/jobs/get/${jobId}`,
+          `${Base_url}/jobs/get/${jobId}`,
           { withCredentials: true }
         );
 

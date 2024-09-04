@@ -1,3 +1,4 @@
+import Base_url from "@/Base_url";
 import { setLoading, setUser } from "@/redux/authSlice";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
@@ -28,7 +29,7 @@ const Signin = () => {
       e.preventDefault();
       dispatch(setLoading(true));
       const response = await axios.post(
-        `${process.env.BACKEND_BASE_URL}/user/login`,
+        `${Base_url}/user/login`,
         data,
         {
           headers: {

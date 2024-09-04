@@ -1,3 +1,4 @@
+import Base_url from "@/Base_url";
 import { setAppliedJobs } from "@/redux/jobSlice";
 import axios from "axios";
 import { useEffect } from "react";
@@ -8,7 +9,7 @@ const useGetAllAppliedJobs = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `${process.env.BACKEND_BASE_URL}/jobs/applications/get/applied`,
+        `${Base_url}/jobs/applications/get/applied`,
         { withCredentials: true }
       );
 

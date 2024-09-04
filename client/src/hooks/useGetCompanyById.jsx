@@ -1,3 +1,4 @@
+import Base_url from "@/Base_url";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -6,7 +7,7 @@ const useGetCompanyById = (id) => {
   useEffect(() => {
     const fetchJob = async () => {
       const response = await axios.get(
-        `${process.env.BACKEND_BASE_URL}/company/get/${id}`,
+        `${Base_url}/company/get/${id}`,
         {
           withCredentials: true,
         }

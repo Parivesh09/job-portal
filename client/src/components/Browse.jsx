@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import SingleJobCard from "./SingleJobCard";
+import Base_url from "@/Base_url";
 
 const Browse = () => {
   const { jobSearchKeyword } = useSelector((store) => store.job);
@@ -12,7 +13,7 @@ const Browse = () => {
     const fetchJobs = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_BASE_URL}/jobs/getJobs?keyword=${jobSearchKeyword}`
+          `${Base_url}/jobs/getJobs?keyword=${jobSearchKeyword}`
         );
 
         if (response?.data.success) {

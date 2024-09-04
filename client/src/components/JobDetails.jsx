@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Base_url from "@/Base_url";
 
 const JobDetails = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const JobDetails = () => {
   const applyJob = async () => {
     try {
       const response = await axios.post(
-        `${process.env.BACKEND_BASE_URL}/jobs/applications/apply/${id}`,
+        `${Base_url}/jobs/applications/apply/${id}`,
         {},
         { withCredentials: true }
       );
