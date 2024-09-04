@@ -8,10 +8,13 @@ const JobApplication = require("./models/jobApplicationModel");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_CONNECTION_URL);
+    await mongoose.connect(process.env.MONGODB_CONNECTION_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("DB connected");
   } catch (error) {
-    console.log(error);
+    console.error("DB connection error:", error);
   }
 };
 
