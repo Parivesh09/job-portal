@@ -21,7 +21,10 @@ app.use("/company", companyRouter);
 app.use("/jobs", jobRouter);
 
 app.get("/", (req, res) => {
-  res.send("the server is running");
+  res.send({
+    "message": "the server is running",
+    "success": true
+  });
 });
 
 app.listen(3000, () => {
