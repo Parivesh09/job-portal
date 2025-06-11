@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const app = express();
 const corsOptions = {
-  origin: "*", 
+  origin: ["http://localhost:5173", "http://localhost:5174", "https://job-portal-nu-hazel.vercel.app/"],
   credentials: true,
 };
 app.use(cors(corsOptions));
