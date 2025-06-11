@@ -11,30 +11,38 @@ const LatestJobs = () => {
       <h1 className=" text-4xl font-bold">Job Openings</h1>
       <div className="grid grid-cols-3 mt-8 w-full gap-5">
         {/* single job card */}
-        {allJobs.map((job) => {
-          return (
-            <div
-              className="shadow-lg border border-gray-200 py-3 pl-4 pr-3 rounded-lg cursor-pointer"
-              onClick={() => navigate(`jobs/description/${job._id}`)}
-            >
-              <div className="font-semibold text-lg">{job.company.name}</div>
-              <div className=" text-gray-500">{job.company.location}</div>
-              <div className="mt-3 text-lg font-bold">{job.title}</div>
-              <div className="text-sm text-gray-500">{job.description}</div>
-              <ul className="flex gap-3 mt-5 text-xs">
-                <li className="border border-gray-200 px-2 py-1 font-bold rounded-full text-blue-700">
-                  {job.positions} Positions
-                </li>
-                <li className="border border-gray-200 px-2 py-1 font-bold rounded-full text-red-600">
-                  {job.jobType}
-                </li>
-                <li className="border border-gray-200 px-2 py-1 font-bold rounded-full text-purple-800">
-                  {job.salary} LPA
-                </li>
-              </ul>
-            </div>
-          );
-        })}
+        {allJobs.length > 0 ? (
+          allJobs.map((job) => {
+            return (
+              <div
+                key={job._id}
+                className="shadow-lg border border-gray-200 py-3 pl-4 pr-3 rounded-lg cursor-pointer"
+                onClick={() => navigate(`jobs/description/${job._id}`)}
+              >
+                <div className="font-semibold text-lg">{job.company.name}</div>
+                <div className=" text-gray-500">{job.company.location}</div>
+                <div className="mt-3 text-lg font-bold">{job.title}</div>
+                <div className="text-sm text-gray-500">{job.description}</div>
+                <ul className="flex gap-3 mt-5 text-xs">
+                  <li className="border border-gray-200 px-2 py-1 font-bold rounded-full text-blue-700">
+                    {job.positions} Positions
+                  </li>
+                  <li className="border border-gray-200 px-2 py-1 font-bold rounded-full text-red-600">
+                    {job.jobType}
+                  </li>
+                  <li className="border border-gray-200 px-2 py-1 font-bold rounded-full text-purple-800">
+                    {job.salary} LPA
+                  </li>
+                </ul>
+              </div>
+            );
+          })
+        ) : (
+          <div className="col-span-3 text-center py-8">
+            <h2 className="text-2xl font-bold text-gray-600">No Jobs Available</h2>
+            <p className="text-gray-500 mt-2">Check back later for new job opportunities</p>
+          </div>
+        )}
       </div>
     </div>
   );

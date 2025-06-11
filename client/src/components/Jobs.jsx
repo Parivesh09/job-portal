@@ -15,9 +15,16 @@ const Jobs = () => {
 
       <div className="grid grid-cols-1 gap-5 overflow-y-scroll max-h-[85vh] w-full p-2">
         {/* single job profile card */}
-        {allJobs.map((job) => (
-          <SingleJobCard job={job} />
-        ))}
+        {allJobs.length > 0 ? (
+          allJobs.map((job) => (
+            <SingleJobCard key={job._id} job={job} />
+          ))
+        ) : (
+          <div className="text-center py-8">
+            <h2 className="text-2xl font-bold text-gray-600">No Jobs Found</h2>
+            <p className="text-gray-500 mt-2">Try adjusting your filters or check back later for new opportunities</p>
+          </div>
+        )}
       </div>
     </div>
   );

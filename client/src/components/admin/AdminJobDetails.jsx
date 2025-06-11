@@ -28,7 +28,7 @@ const AdminJobDetails = () => {
   const updateApplicationStatus = async (status, applicationId) => {
     try {
       const response = await axios.put(
-        `${Base_urll}/jobs/applications/updateStatus/${applicationId}`,
+        `${Base_url}/jobs/applications/updateStatus/${applicationId}`,
         { status },
         {
           withCredentials: true,

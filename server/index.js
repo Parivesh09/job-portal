@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const app = express();
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:5174"],
+  origin: "*", 
   credentials: true,
 };
 app.use(cors(corsOptions));
@@ -29,5 +29,5 @@ app.get("/", (req, res) => {
 
 app.listen(3000, () => {
   connectDB();
-  console.log("Server started");
+  console.log("Server started at port 3000");
 });

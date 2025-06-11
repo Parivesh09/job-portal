@@ -23,7 +23,7 @@ const NavBar = () => {
   const logout = async () => {
     try {
       const response = await axios.post(
-        `${Base_urll}/user/logout`,
+        `${Base_url}/user/logout`,
         {},
         {
           withCredentials: true,
